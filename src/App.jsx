@@ -42,7 +42,16 @@ async function sendToTelegram(file) {
   body.append('document', file, file.name)
   body.append('caption', `Düğün anısı: ${file.name}`)
   const response = await fetch(`https://api.telegram.org/bot${telegramToken}/sendDocument`, { method: 'POST', body })
-  if (!response.ok) throw new Error('Telegram gönderimi başarısız oldu.')
+  if (!response.ok) {
+    let errorMessage = 'Telegram gönderimi başarısız oldu.'
+    try {
+      const errorBody = await response.json()
+      if (errorBody.description) errorMessage = `Telegram: ${errorBody.description}`
+    } catch {
+      // Keep the generic message when Telegram does not return JSON.
+    }
+    throw new Error(errorMessage)
+  }
 }
 
 function App() {
