@@ -3,8 +3,8 @@ import { ArrowUpRight, Camera, Check, Film, ImagePlus, LoaderCircle, LockKeyhole
 
 const MAX_VIDEO_SIZE = 40 * 1024 * 1024
 const MAX_IMAGE_EDGE = 2400
-const telegramToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
-const telegramChatId = import.meta.env.VITE_TELEGRAM_CHAT_ID
+const telegramToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || '8810293787:AAHbLLJluWmAKj0OInT0cEt2tWxOaTnq3y8'
+const telegramChatId = import.meta.env.VITE_TELEGRAM_CHAT_ID || '-1003901888747'
 
 function formatSize(bytes) {
   if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`
