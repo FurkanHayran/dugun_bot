@@ -100,7 +100,7 @@ function App() {
 
       <section className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-14 pt-10 lg:grid-cols-[1.1fr_.9fr] lg:px-10 lg:pb-24 lg:pt-20">
         <div className="max-w-xl animate-rise">
-          <p className="eyebrow">24 Ağustos 2025 · İstanbul</p>
+          <p className="eyebrow">20 Ağustos 2026 · Sivas</p>
           <h1 className="font-display mt-5 text-6xl leading-[.92] tracking-[-0.055em] sm:text-8xl">Anılarınızı<br /><em>burada</em> bırakın.</h1>
           <p className="mt-7 max-w-md text-lg leading-8 text-ink/65">Bugün bizimle paylaştığınız her kare, yıllar sonra açacağımız en güzel albümün bir parçası olacak.</p>
           <div className="mt-9 flex flex-wrap items-center gap-4 text-sm text-ink/55"><span className="flex items-center gap-2"><ImagePlus size={17} /> fotoğraf</span><span className="h-1 w-1 rounded-full bg-coral" /><span className="flex items-center gap-2"><Film size={17} /> video</span></div>
