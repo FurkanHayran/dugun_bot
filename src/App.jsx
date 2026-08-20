@@ -55,7 +55,8 @@ async function sendToTelegram(file) {
 }
 
 function App() {
-  const inputRef = useRef(null)
+  const galleryInputRef = useRef(null)
+  const cameraInputRef = useRef(null)
   const [queue, setQueue] = useState([])
   const [isSending, setIsSending] = useState(false)
   const [sentCount, setSentCount] = useState(0)
@@ -120,8 +121,12 @@ function App() {
           <div className="upload-icon"><Camera size={27} strokeWidth={1.5} /></div>
           <h2 className="font-display mt-6 text-3xl tracking-tight">Kareyi seçin</h2>
           <p className="mt-2 text-sm leading-6 text-ink/55">Galerinizden birden fazla fotoğraf veya video ekleyebilirsiniz.</p>
-          <button className="primary-button mt-7" onClick={() => inputRef.current?.click()} disabled={isSending}><Camera size={18} /> galeri / kamera aç <ArrowUpRight size={17} /></button>
-          <input ref={inputRef} type="file" className="hidden" accept="video/*,image/*" capture="environment" multiple onChange={chooseFiles} />
+          <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row">
+            <button className="primary-button" onClick={() => galleryInputRef.current?.click()} disabled={isSending}><ImagePlus size={18} /> galeriden seçin <ArrowUpRight size={17} /></button>
+            <button className="secondary-button camera-button" onClick={() => cameraInputRef.current?.click()} disabled={isSending}><Camera size={17} /> kamerayı aç</button>
+          </div>
+          <input ref={galleryInputRef} type="file" className="hidden" accept="video/*,image/*" multiple onChange={chooseFiles} />
+          <input ref={cameraInputRef} type="file" className="hidden" accept="video/*,image/*" capture="environment" multiple onChange={chooseFiles} />
           <p className="mt-4 text-center text-[11px] uppercase tracking-[0.12em] text-ink/40">Videolar 40 MB altında olmalı</p>
         </div>
       </section>

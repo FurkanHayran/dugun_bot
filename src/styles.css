@@ -19,6 +19,9 @@ body { margin: 0; min-width: 320px; background: var(--paper); }
 .primary-button:hover:not(:disabled) { background: var(--fuchsia); transform: translateY(-2px); }
 .primary-button:disabled { cursor: default; opacity: .6; }
 .secondary-button { padding: .9rem 1rem; color: #20232199; background: transparent; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.camera-button { display: inline-flex; align-items: center; gap: .45rem; }
+.secondary-button:hover:not(:disabled) { color: var(--fuchsia); }
+.secondary-button:disabled { cursor: default; opacity: .6; }
 .icon-button { display: grid; place-items: center; width: 30px; height: 30px; color: #20232180; background: transparent; }
 .queue-head { display: flex; align-items: end; justify-content: space-between; border-top: 1px solid #20232120; padding-top: 1.5rem; }
 .progress-number { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--fuchsia); }
