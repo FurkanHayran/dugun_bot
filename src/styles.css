@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root { font-family: 'Manrope', sans-serif; color: #29222b; background: #fff8f5; font-synthesis: none; }
+* { box-sizing: border-box; }
+:root { --ink: #29222b; --paper: #fff8f5; --coral: #f05b68; --fuchsia: #d94183; --gold: #e8a83e; --mint: #467c69; }
+body { margin: 0; min-width: 320px; background: var(--paper); }
+.bg-paper { background: var(--paper); }
+.text-ink { color: var(--ink); }
+.font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+.grain { position: fixed; inset: 0; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); }
+.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; color: #fff8f5; background: var(--fuchsia); border-radius: 50%; box-shadow: 0 0 0 5px #d9418318, 0 5px 18px #d9418340; }
+.eyebrow, .corner-label { color: var(--coral); font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.upload-panel { position: relative; padding: 2.5rem; border: 1px solid #d9418340; background: linear-gradient(145deg, #fff1ed, #ffe3ed); min-height: 350px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; box-shadow: 12px 12px 0 #f6c4d5, 0 20px 40px #d9418314; }
+.corner-label { position: absolute; left: 1.5rem; top: 1.5rem; color: #29222b80; letter-spacing: .15em; }
+.upload-icon { display: grid; place-items: center; width: 68px; height: 68px; color: #fff8f5; background: linear-gradient(135deg, var(--coral), var(--fuchsia)); border: 5px solid #fff8f5; border-radius: 50%; box-shadow: 0 8px 22px #f05b6850; }
+.primary-button, .secondary-button, .icon-button { border: 0; cursor: pointer; font: inherit; transition: transform .2s, background .2s; }
+.primary-button { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; padding: .9rem 1.15rem; color: #fff8f5; background: var(--ink); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; box-shadow: 0 6px 0 #d9418350; }
+.primary-button:hover:not(:disabled) { background: var(--fuchsia); transform: translateY(-2px); }
+.primary-button:disabled { cursor: default; opacity: .6; }
+.secondary-button { padding: .9rem 1rem; color: #20232199; background: transparent; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.icon-button { display: grid; place-items: center; width: 30px; height: 30px; color: #20232180; background: transparent; }
+.queue-head { display: flex; align-items: end; justify-content: space-between; border-top: 1px solid #20232120; padding-top: 1.5rem; }
+.progress-number { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--fuchsia); }
+.progress-track { height: 7px; background: #f6c4d5; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--coral), var(--fuchsia), var(--gold)); transition: width .35s ease; }
+.file-row { display: flex; align-items: center; gap: .8rem; padding: .9rem; border: 1px solid #d9418325; background: #fffdfc; box-shadow: 0 4px 16px #d941830b; }
+.file-type { display: grid; place-items: center; width: 38px; height: 38px; color: var(--fuchsia); background: #ffe2ed; }
+.text-green { color: var(--mint); }
+.notice { color: #55836c; font-size: 12px; line-height: 1.6; }
+.notice-error { color: #b34435; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.animate-rise { animation: rise .7s ease-out both; }
+.animate-rise-delayed { animation: rise .7s .12s ease-out both; }
+@media (max-width: 640px) { .upload-panel { padding: 2.25rem 1.25rem; box-shadow: 7px 7px 0 #f6c4d5, 0 15px 30px #d9418312; } }
